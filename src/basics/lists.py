@@ -10,3 +10,12 @@ print (le_small_list + list) #prints small list + the list
 
 list[0] = "abcde"
 print (list[0]) # prints abcde
+
+numbers_list = [5, 3, 4, 1, 2]
+# sorting, this is googable
+# only works on all string/numbers list
+print (numbers_list)
+numbers_list.sort()
+print (numbers_list)
+#min works as well
+print (max(numbers_list))
