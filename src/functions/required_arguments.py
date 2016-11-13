@@ -1,4 +1,4 @@
-
+# basic required arguments
 def ask_name( name ):
 	
 	"This prints a passed string into this function"
