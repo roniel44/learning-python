@@ -1,14 +1,12 @@
-#time and date stuff
+# time and date stuff
 import time
 
-print (time.localtime());
-print (time.time());
-print (time.gmtime());
+print(time.localtime());
+print(time.time());
+print(time.gmtime());
 
-
-#calendar
+# calendar
 import calendar
+
 november_cal = calendar.month(2016, 11);
 print(november_cal);
-
-

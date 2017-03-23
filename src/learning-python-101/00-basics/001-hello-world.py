@@ -1,1 +1,1 @@
-print ("hellworld")
+print("hellworld")
