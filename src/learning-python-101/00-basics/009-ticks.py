@@ -1,12 +1,17 @@
-# time and date stuff
-import time
+def main():
+    # time and date stuff
+    import time
 
-print(time.localtime());
-print(time.time());
-print(time.gmtime());
+    print(time.localtime())
+    print(time.time())
+    print(time.gmtime())
 
-# calendar
-import calendar
+    # calendar
+    import calendar
 
-november_cal = calendar.month(2016, 11);
-print(november_cal);
+    november_cal = calendar.month(2016, 11)
+    print(november_cal)
+
+
+if __name__ == '__main__':
+    main()

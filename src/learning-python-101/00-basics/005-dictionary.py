@@ -1,11 +1,16 @@
-# dictionary works like the assoiative arrays in php
-small_dict = {"name": "Jack", "surname": "Dawson"}
-print(small_dict["name"])
-print(small_dict["surname"])
-small_dict["name"] = "Jill"
-print(small_dict["name"])
+def main():
+    # dictionary works like the assoiative arrays in php
+    small_dict = {"name": "Jack", "surname": "Dawson"}
+    print(small_dict["name"])
+    print(small_dict["surname"])
+    small_dict["name"] = "Jill"
+    print(small_dict["name"])
 
-# these functions are googable
-print(str(small_dict))
-print(len(small_dict))
-print(type(small_dict))
+    # these functions are googable
+    print(str(small_dict))
+    print(len(small_dict))
+    print(type(small_dict))
+
+
+if __name__ == '__main__':
+    main()
