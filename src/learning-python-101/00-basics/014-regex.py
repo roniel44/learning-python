@@ -3,7 +3,7 @@ import re
 
 def main():
     fh = open('files/the-cross-lyrics.txt')
-    pattern = '(wait|li)ed'
+    pattern = re.compile('(wait|li)ed', re.IGNORECASE)
     for line in fh:
         if re.search(pattern, line):
             print(line)
@@ -19,6 +19,7 @@ def main():
         match = re.search(pattern, line3)
         if match:
             print(re.sub(pattern, 'replaced', line3))
+            print(pattern.sub('replaced', line3))
 
 
 if __name__ == '__main__':
