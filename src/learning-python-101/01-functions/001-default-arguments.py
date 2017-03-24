@@ -1,8 +1,15 @@
+# This is ayyy...lmao
+
+
 def print_info(ayyy="ayyy...", lmao="lmao"):
-    "This is ayyy...lmao";
-    print(ayyy, " ", lmao);
-    return;
+    print(ayyy, " ", lmao)
+    return
 
 
-print_info();
-print_info(lmao="LAMO");
+def main():
+    print_info()
+    print_info(lmao="LAMO")
+
+
+if __name__ == '__main__':
+    main()
