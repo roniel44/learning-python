@@ -1,36 +1,36 @@
 class Person:
-    def getNumberOfLegs(self):
-        return self.legCount
+    def get_number_of_legs(self):
+        return self.leg_count
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
 
 class OldLady(Person):
-    legCount = 3
+    leg_count = 3
     name = "OldLady"
 
 
 class Baby(Person):
-    legCount = 4
+    leg_count = 4
     name = "Baby"
 
 
 class Teenager(Person):
-    legCount = 2
+    leg_count = 2
     name = "Teenager"
 
 
 def count_them_legs(people):
-    print("A %s has %d legs" % (people.getName(), people.getNumberOfLegs()))
+    print("A %s has %d legs" % (people.get_name(), people.get_number_of_legs()))
 
 
 def main():
-    oldLady = OldLady()
+    old_lady = OldLady()
     baby = Baby()
     teenie = Teenager()
 
-    for person in (oldLady, baby, teenie):
+    for person in (old_lady, baby, teenie):
         count_them_legs(person)
 
 
