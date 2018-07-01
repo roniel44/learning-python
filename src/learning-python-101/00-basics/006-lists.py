@@ -12,6 +12,7 @@ def main():
     listerino[0] = "abcde"  # replace item in list
     print(listerino)
     print(listerino[-1]) #prints last item in list
+    print(listerino[-5:-1]) # example of negative index slicing
 
     numbers_list = [5, 3, 4, 1, 2]
     # sorting, this is googable
@@ -38,6 +39,13 @@ def main():
     print(z1)
     print(z2)
     print(z3)
+
+
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+    print(alphabet[2:7])  #element 3 to element before 7 (6)
+    print(alphabet[-8:7]) #another example of negative slicing
+    print(alphabet[2::2]) #specify a step, without specifying ending elents
+    print(alphabet[-10:-1:2]) #step with negative indices
 
 if __name__ == '__main__':
     main()
