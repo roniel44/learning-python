@@ -24,6 +24,10 @@ def main():
 
     print("flour quotient is %d " % floor_division)
 
+    some_float = 5.555123
+
+    print(some_float)
+
 
 if __name__ == '__main__':
     main()
