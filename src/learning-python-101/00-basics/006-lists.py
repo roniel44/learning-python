@@ -42,10 +42,12 @@ def main():
 
 
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
-    print(alphabet[2:7])  #element 3 to element before 7 (6)
-    print(alphabet[-8:7]) #another example of negative slicing
-    print(alphabet[2::2]) #specify a step, without specifying ending elents
-    print(alphabet[-10:-1:2]) #step with negative indices
+    print(alphabet[2:7])   # element 3 to element before 7 (6)
+    print(alphabet[-8:7])  # another example of negative slicing
+    print(alphabet[2::2])  # specify a step, without specifying ending elents
+    print(alphabet[-10:-1:2])  # step with negative indices
+    print(alphabet[::-1])  # example of reversing a list using negative steps
+    print(alphabet[6:1:-1])  # start from a greater element, go backwards
 
 if __name__ == '__main__':
     main()
