@@ -157,7 +157,19 @@ def main():
     print(Games[Pdict['LeBronJames']][7])  # number of games played in 2013
     print(Games[Pdict['DwayneWade']])  # number of games played, whole row
     print(Games[Pdict['DwayneWade']][7])  # number of games played in 2013
+    print(Games[Pdict['DerrickRose']][7])  # number of games played in 2013
     print(Salary[Pdict['LeBronJames']][4])  # number of games played in 2009
+
+    #  print(FieldGoals / Games)  will encounter error since Derrick rose played 0 games in 2013 :(
+    import warnings
+    warnings.filterwarnings('ignore')
+
+    print(FieldGoals / Games)  # errors now ignored
+    FieldGoalsPerGame = np.matrix.round(FieldGoals / Games)
+    MinutesPerGame = np.matrix.round(MinutesPlayed / Games)
+    print(FieldGoalsPerGame)
+    print(MinutesPerGame)
+    print(MinutesPlayed)
 
 
 if __name__ == '__main__':
