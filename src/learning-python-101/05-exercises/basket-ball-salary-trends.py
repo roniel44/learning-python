@@ -170,6 +170,8 @@ def main():
     print(FieldGoalsPerGame)
     print(MinutesPerGame)
     print(MinutesPlayed)
+    print(FieldGoalsPerGame[Pdict['DerrickRose']][Sdict['2009']])
+    print(FieldGoalsPerGame[Pdict['KobeBryant']][Sdict['2009']])
 
 
 if __name__ == '__main__':
