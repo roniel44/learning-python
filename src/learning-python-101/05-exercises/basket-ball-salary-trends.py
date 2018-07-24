@@ -155,9 +155,9 @@ Points = np.array([KobeBryant_PTS, JoeJohnson_PTS, LeBronJames_PTS, CarmeloAntho
 colors = ['black', 'green', 'blue', 'purple', 'magenta', 'yellow', 'pink', 'orange', 'red', 'cyan']
 
 
-def display_sample_plot(player_list):
+def display_sample_plot(data, player_list=Players):
     for name in player_list:
-        plt.plot(Salary[Pdict[name]], c=colors[Pdict[name]], ls='--', marker='s', ms='7', label=Players[Pdict[name]])  # Kobe's salary shown in a plot
+        plt.plot(data[Pdict[name]], c=colors[Pdict[name]], ls='--', marker='s', ms='7', label=Players[Pdict[name]])  # Kobe's salary shown in a plot
 
     plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
     # for more styles of markers https://matplotlib.org/api/markers_api.html
@@ -194,7 +194,8 @@ def print_learned_stuffs():
 
 
 def main():
-    display_sample_plot(['KobeBryant', 'LeBronJames', 'JoeJohnson'])
+    display_sample_plot(Points, ['KobeBryant', 'LeBronJames', 'JoeJohnson'])
+    display_sample_plot(Salary, ['KobeBryant', 'LeBronJames', 'JoeJohnson'])
 
 
 if __name__ == '__main__':
