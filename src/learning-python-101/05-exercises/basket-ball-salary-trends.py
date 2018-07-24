@@ -46,6 +46,7 @@
 def main():
     # Import numpy
     import numpy as np
+    import matplotlib.pyplot as plt
 
     # Seasons
     Seasons = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"]
@@ -172,6 +173,16 @@ def main():
     print(MinutesPlayed)
     print(FieldGoalsPerGame[Pdict['DerrickRose']][Sdict['2009']])
     print(FieldGoalsPerGame[Pdict['KobeBryant']][Sdict['2009']])
+    plt.plot(Salary[0], c='black', ls='--', marker='s', ms='7', label=Players[0])  # Kobe's salary shown in a plot
+    plt.plot(Salary[1], c='blue', ls='--', marker='o', ms='7', label=Players[1])  # Joe Johnson's salary shown in a plot
+    plt.plot(Salary[1], c='blue', ls='--', marker='o', ms='7', label=Players[2])  # Joe Johnson's salary shown in a plot
+    plt.plot(Salary[3], c='blue', ls='--', marker='D', ms='7', label=Players[3])  # Melo's salary shown in a plot
+    plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
+    # for more styles of markers https://matplotlib.org/api/markers_api.html
+    # for more styles of lines https://matplotlib.org/api/lines_api.html
+    plt.rcParams['figure.figsize'] = 8, 4  # increase size
+    plt.xticks(list(range(0, 9)), Seasons)  # labels
+    plt.show()
 
 
 if __name__ == '__main__':
