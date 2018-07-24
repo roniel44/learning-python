@@ -197,6 +197,9 @@ def print_learned_stuffs():
 def main():
     display_sample_plot(FieldGoalsPercentage)
     display_sample_plot(MinutesPerGame)
+    display_sample_plot(Salary)
+    display_sample_plot(Salary / Games)
+    display_sample_plot(Salary / FieldGoals)
 
 
 if __name__ == '__main__':
