@@ -47,6 +47,8 @@
 # Import numpy
 import numpy as np
 import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings('ignore')
 
 # Seasons
 Seasons = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"]
@@ -152,6 +154,9 @@ DwayneWade_PTS = [2040, 1397, 1254, 2386, 2045, 1941, 1082, 1463, 1028, 1331]
 Points = np.array([KobeBryant_PTS, JoeJohnson_PTS, LeBronJames_PTS, CarmeloAnthony_PTS, DwightHoward_PTS, ChrisBosh_PTS,
                    ChrisPaul_PTS, KevinDurant_PTS, DerrickRose_PTS, DwayneWade_PTS])
 
+FieldGoalsPerGame = np.matrix.round(FieldGoals / Games)
+FieldGoalsPercentage = FieldGoals / FieldGoalAttempts
+MinutesPerGame = np.matrix.round(MinutesPlayed / Games)
 colors = ['black', 'green', 'blue', 'purple', 'magenta', 'yellow', 'pink', 'orange', 'red', 'cyan']
 
 
@@ -159,10 +164,10 @@ def display_sample_plot(data, player_list=Players):
     for name in player_list:
         plt.plot(data[Pdict[name]], c=colors[Pdict[name]], ls='--', marker='s', ms='7', label=Players[Pdict[name]])  # Kobe's salary shown in a plot
 
-    plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
+    plt.legend(loc='upper right', bbox_to_anchor=(1, 1))
     # for more styles of markers https://matplotlib.org/api/markers_api.html
     # for more styles of lines https://matplotlib.org/api/lines_api.html
-    plt.rcParams['figure.figsize'] = 8, 4  # increase size
+    plt.rcParams['figure.figsize'] = 9, 4  # increase size
     plt.xticks(list(range(0, 9)), Seasons)  # labels
     plt.show()
 
@@ -180,12 +185,8 @@ def print_learned_stuffs():
     print(Salary[Pdict['LeBronJames']][4])  # number of games played in 2009
 
     #  print(FieldGoals / Games)  will encounter error since Derrick rose played 0 games in 2013 :(
-    import warnings
-    warnings.filterwarnings('ignore')
 
     print(FieldGoals / Games)  # errors now ignored
-    FieldGoalsPerGame = np.matrix.round(FieldGoals / Games)
-    MinutesPerGame = np.matrix.round(MinutesPlayed / Games)
     print(FieldGoalsPerGame)
     print(MinutesPerGame)
     print(MinutesPlayed)
@@ -194,8 +195,8 @@ def print_learned_stuffs():
 
 
 def main():
-    display_sample_plot(Points, ['KobeBryant', 'LeBronJames', 'JoeJohnson'])
-    display_sample_plot(Salary, ['KobeBryant', 'LeBronJames', 'JoeJohnson'])
+    display_sample_plot(FieldGoalsPercentage)
+    display_sample_plot(MinutesPerGame)
 
 
 if __name__ == '__main__':
