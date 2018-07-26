@@ -15,9 +15,7 @@ def basic_functions():
 
 
 def rename_columns():
-    print(stats.columns)
     stats.columns = ['CountryName', 'CountryCode', 'Birthrate', 'Internetusers', 'IncomeGroup']
-    print(stats.head())
 
 
 def subset_by_rows():
@@ -35,15 +33,19 @@ def get_only_twentieth_country():
 
 
 def subset_by_columns():
-    stats.columns = ['CountryName', 'CountryCode', 'Birthrate', 'Internetusers', 'IncomeGroup']
     print(stats['CountryName'].head())
     print(stats.CountryName.head())
     print(stats[['CountryName']].head())
     print(stats[['CountryName', 'CountryCode']].head())  # this follow on order you specified
 
 
+def subset_by_row_cols():
+    print(stats[::-1]['CountryName'].head())
+
+
 def main():
-    subset_by_columns()
+    rename_columns()
+    subset_by_row_cols()
 
 
 if __name__ == '__main__':
