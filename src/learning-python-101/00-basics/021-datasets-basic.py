@@ -34,8 +34,16 @@ def get_only_twentieth_country():
     print(stats[::20])
 
 
+def subset_by_columns():
+    stats.columns = ['CountryName', 'CountryCode', 'Birthrate', 'Internetusers', 'IncomeGroup']
+    print(stats['CountryName'].head())
+    print(stats.CountryName.head())
+    print(stats[['CountryName']].head())
+    print(stats[['CountryName', 'CountryCode']].head())  # this follow on order you specified
+
+
 def main():
-    get_only_twentieth_country()
+    subset_by_columns()
 
 
 if __name__ == '__main__':
