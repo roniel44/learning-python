@@ -20,8 +20,22 @@ def rename_columns():
     print(stats.head())
 
 
+def subset_by_rows():
+    print(stats[21:26])
+    print(stats[2:3])
+    print(stats[0:10])
+
+
+def reverse_dataframe():
+    print(stats[::-1])
+
+
+def get_only_twentieth_country():
+    print(stats[::20])
+
+
 def main():
-    rename_columns()
+    get_only_twentieth_country()
 
 
 if __name__ == '__main__':
