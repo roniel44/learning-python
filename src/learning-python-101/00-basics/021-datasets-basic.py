@@ -43,9 +43,21 @@ def subset_by_row_cols():
     print(stats[::-1]['CountryName'].head())
 
 
+def arithmetic_operations():
+    result = stats.Birthrate * stats.Internetusers
+    print(result.head())
+
+
+def add_columns():
+    stats['CustomCalc'] = stats['Birthrate'] * stats['Internetusers']
+    print(stats.head())
+    new_stats = stats.drop('CustomCalc', 1)
+    print(new_stats.head())
+
+
 def main():
     rename_columns()
-    subset_by_row_cols()
+    add_columns()
 
 
 if __name__ == '__main__':
