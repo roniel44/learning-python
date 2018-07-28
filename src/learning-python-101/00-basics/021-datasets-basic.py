@@ -55,9 +55,35 @@ def add_columns():
     print(new_stats.head())
 
 
+def access_individual_elements():
+    print(stats.iat[0, 1])  # get by column key
+    print(stats.iat[3, 2])
+    print(stats.iat[15, 3])
+    print(stats.iat[22, 4])
+    print(stats.at[22, 'Birthrate'])  # get by label
+    print(stats.at[55, 'CountryName'])
+    sub10 = stats[::10]
+    print(sub10.iat[10, 0])  # iat retrieves from the new object sub10
+    print(sub10.at[10, 'CountryName'])  # at retrieves from the original 10
+
+
+def filtering():
+    internet_users_filter = stats.Internetusers < 2
+    print(stats[internet_users_filter])
+
+    print(stats[stats.Birthrate > 40])
+
+    print(stats[(stats.Birthrate > 40) & stats.Internetusers < 2])
+
+    print(stats[stats.IncomeGroup == 'High income'])
+    print(stats.IncomeGroup.unique())
+
+    print(stats[stats.CountryName == 'Malta'])
+
+
 def main():
     rename_columns()
-    add_columns()
+    access_individual_elements()
 
 
 if __name__ == '__main__':
