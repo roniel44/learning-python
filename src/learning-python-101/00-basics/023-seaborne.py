@@ -21,7 +21,8 @@ def display_lmplot():
 
 
 def display_lmplot_fit_reg_false():
-    sns.lmplot(data=stats, x='InternetUsers', y='Birthrate', fit_reg=False, hue='IncomeGroup')
+    sns.lmplot(data=stats, x='InternetUsers', y='Birthrate',
+               fit_reg=False, hue='IncomeGroup', size=8, scatter_kws={'color': 'pink'})
     plt.show()
 
 
