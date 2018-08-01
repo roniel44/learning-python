@@ -29,9 +29,33 @@ def display_joint_plot_sample():
     plt.show()
 
 
+def display_distplot_sample():
+    sns.set_style('darkgrid')
+    sns.distplot(movies.AudienceRating, bins=15)
+    plt.show()
+
+
+def display_pyplot_hist():
+    sns.set_style('white')
+    plt.hist(movies.AudienceRating)
+    plt.show()
+
+def display_lmplot_sample():
+    sns.lmplot(data=movies, x='CriticRating',
+               y='AudienceRating', fit_reg=False, hue='Genre',
+               aspect=1, size=7)
+    plt.show()
+
+
+def display_kde_sample():
+    sns.kdeplot(movies.CriticRating,
+               movies.AudienceRating, shade=True)
+    plt.show()
+
+
 def main():
     rename_columns()
-    display_joint_plot_sample()
+    display_kde_sample()
 
 
 if __name__ == '__main__':
