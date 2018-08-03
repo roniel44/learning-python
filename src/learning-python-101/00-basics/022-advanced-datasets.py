@@ -53,9 +53,18 @@ def display_kde_sample():
     plt.show()
 
 
+def display_kde_with_subplot_sample():
+    sns.set_style('dark')
+    f, axes = plt.subplots(4, 4, figsize={12, 6}, sharex=True, sharey=True)
+
+    sns.kdeplot(movies.BudgetMillions, movies.CriticRating, shade=True, ax=axes[0, 2])  # y, x
+    sns.kdeplot(movies.BudgetMillions, movies.AudienceRating, shade=True, ax=axes[2, 1]).set(xlim=(-20, 160))  # y, x
+    plt.show()
+
+
 def main():
     rename_columns()
-    display_kde_sample()
+    display_kde_with_subplot_sample()
 
 
 if __name__ == '__main__':
