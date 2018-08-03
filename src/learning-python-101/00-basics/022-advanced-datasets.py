@@ -56,15 +56,23 @@ def display_kde_sample():
 def display_kde_with_subplot_sample():
     sns.set_style('dark')
     f, axes = plt.subplots(4, 4, figsize={12, 6}, sharex=True, sharey=True)
-
     sns.kdeplot(movies.BudgetMillions, movies.CriticRating, shade=True, ax=axes[0, 2])  # y, x
     sns.kdeplot(movies.BudgetMillions, movies.AudienceRating, shade=True, ax=axes[2, 1]).set(xlim=(-20, 160))  # y, x
     plt.show()
 
 
+def display_violin_plots_sample():
+    f, axes = plt.subplots(2, 2, figsize={12, 6})
+    sns.violinplot(data=movies, x='Genre', y='CriticRating', ax=axes[0, 0])
+    sns.boxplot(data=movies, x='Genre', y='CriticRating',  ax=axes[0, 1])
+    sns.violinplot(data=movies[movies.Genre == 'Drama'], x='Year', y='CriticRating', ax=axes[1, 0])
+    sns.boxplot(data=movies[movies.Genre == 'Drama'], x='Year', y='CriticRating',  ax=axes[1,  1])
+    plt.show()
+
+
 def main():
     rename_columns()
-    display_kde_with_subplot_sample()
+    display_violin_plots_sample()
 
 
 if __name__ == '__main__':
