@@ -83,9 +83,35 @@ def display_facet_grid1():
     plt.show()
 
 
+def display_dashboard_sample():
+    f, axes = plt.subplots(2, 2, figsize=(15, 15))
+    sns.kdeplot(movies.BudgetMillions, movies.CriticRating, shade=True, ax=axes[0, 0])  # y, x
+    sns.kdeplot(movies.BudgetMillions, movies.AudienceRating, shade=True, ax=axes[0, 1]).set(xlim=(-20, 160))
+    sns.violinplot(data=movies[movies.Genre == 'Drama'], x='Year', y='CriticRating', ax=axes[1, 0])
+    axes[1, 1].hist(movies.CriticRating, bins=15)
+    plt.show()
+
+
+def display_dashboard_sample2():
+    sns.set_style('darkgrid', {'axes.facecolor': 'black'})
+    f, axes = plt.subplots(2, 2, figsize=(15, 15))
+    k1 = sns.kdeplot(movies.BudgetMillions, movies.CriticRating, ax=axes[0, 0], shade=True, shade_lowest=True, cmap='summer')
+    k2 = sns.kdeplot(movies.BudgetMillions, movies.CriticRating, ax=axes[0, 0], cmap='cool')
+
+    sns.kdeplot(movies.BudgetMillions, movies.AudienceRating, ax=axes[0, 1])
+    sns.violinplot(data=movies[movies.Genre == 'Drama'], x='Year', y='CriticRating', ax=axes[1, 0], palette='YlOrRd')
+    sns.kdeplot(movies.CriticRating, movies.AudienceRating, shade=True, shade_lowest=False, cmap='Reds', ax=axes[1, 1])
+    sns.kdeplot(movies.CriticRating, movies.AudienceRating, cmap='Reds', ax=axes[1, 1])
+
+    k1.set(xlim=(-20, 160))
+    k2.set(xlim=(-20, 160))
+
+    plt.show()
+
+
 def main():
     rename_columns()
-    display_facet_grid1()
+    display_dashboard_sample2()
 
 
 if __name__ == '__main__':
