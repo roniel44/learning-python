@@ -40,6 +40,7 @@ def display_pyplot_hist():
     plt.hist(movies.AudienceRating)
     plt.show()
 
+
 def display_lmplot_sample():
     sns.lmplot(data=movies, x='CriticRating',
                y='AudienceRating', fit_reg=False, hue='Genre',
@@ -70,9 +71,16 @@ def display_violin_plots_sample():
     plt.show()
 
 
+def display_facet_grid1():
+    g = sns.FacetGrid(data=movies, row='Genre', col='Year', hue='Genre')
+    kws = dict(s=50, linewidth=0.5, edgecolor='black')
+    g.map(plt.scatter, 'CriticRating', 'AudienceRating', **kws)
+    plt.show()
+
+
 def main():
     rename_columns()
-    display_violin_plots_sample()
+    display_facet_grid1()
 
 
 if __name__ == '__main__':
