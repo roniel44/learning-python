@@ -75,6 +75,11 @@ def display_facet_grid1():
     g = sns.FacetGrid(data=movies, row='Genre', col='Year', hue='Genre')
     kws = dict(s=50, linewidth=0.5, edgecolor='black')
     g.map(plt.scatter, 'CriticRating', 'AudienceRating', **kws)
+    g.set(xlim=(0, 100), ylim=(0, 100))
+    for ax in g.axes.flat:
+        ax.plot((20, 60), (20, 60), c='gray', ls='--')
+
+    g.add_legend()
     plt.show()
 
 
